@@ -1,7 +1,5 @@
 FROM mhart/alpine-node:14
 
-RUN npm i -g http-server
-
 WORKDIR /app
 
 COPY package.json package-lock.json ./
@@ -15,5 +13,5 @@ COPY . .
 
 RUN npm run build
 
-# Run http-server on port 8080 to serve the files in dist
-CMD ["http-server", "dist", "-p", "8080"]
+# Run the npm start command to host the server
+CMD ["npm", "start"]
