@@ -1,0 +1,15 @@
+# Prebuilt MS image
+FROM mcr.microsoft.com/playwright:bionic
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+COPY . .
+
+RUN npm run build
+
+# Run the npm run test:e2e command to host the server and run the e2e tests
+CMD ["npm", "run", "test:e2e"]
