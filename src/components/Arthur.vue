@@ -2,15 +2,15 @@
   <div class="arthur">
     <h1>Arthur's Bone Counter</h1>
     <img src="~@/assets/arthur.jpg" class="arthur__img" />
-    <h2>
+    <h2 id="dog-message">
       {{ dogMessage }}
     </h2>
-    <h3>
+    <h3 id="bone-count">
       Current bone count: {{ boneCount }}
     </h3>
     <div>
-      <button class="arthur__method-button" @click="giveBone">Give a bone</button>
-      <button class="arthur__method-button" @click="takeBone">Take a bone</button>
+      <button class="arthur__method-button" @click="giveBone" id="give-bone">Give a bone</button>
+      <button class="arthur__method-button" @click="takeBone" id="take-bone">Take a bone</button>
     </div>
   </div>
 </template>
